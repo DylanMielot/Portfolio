@@ -1,0 +1,134 @@
+
+/* *************************************** */
+/* RESPONSIVE ZONE */
+/* *************************************** */
+
+@media screen and (min-width:2000px){
+    #mainContainer{
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows : 100vh 600px 600px 500px 100px;
+    }
+
+    #carousselCardContainer{
+        width:100%;
+        height:100%;
+        display:flex;
+    
+        transition:margin-left 0.5s ease;
+    }
+
+    #cardContainer{
+        overflow : hidden;
+    }
+
+    @keyframes particleFall{
+        0%{ top : -50%;}
+        35%{ top : 0%;}
+        70%{ top : calc(100% - 250px);}
+        100%{ top : calc(100% - 100px);}
+    }
+}
+
+@media screen and (max-width:1130px){
+    #cardContainer{
+        background-size: cover;
+        transition: box-shadow 0.5s ease, background 8s ease;
+    }
+    #cardContainer:hover{
+        box-shadow: 15px 0px 100px black;
+        background-size: cover;
+    }
+}
+
+/* phones and other little screens*/
+@media screen and (max-width:720px){
+    #mainContainer{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "welcome"
+            "cardContainer"
+            "canvas2"
+            "aboutme"
+            "footer";
+    }
+
+    #Welcomecontainer {
+        grid-area: welcome;
+        scroll-snap-align: center;
+        background-color: black;
+    
+        display:grid;
+        grid-template-columns: 15% 15% 100vh;
+        grid-template-rows : 100vh;
+        grid-template-areas: 
+            "titleMiddle canvasMargin canvasWelcome";
+
+        overflow-y:hidden;
+    }
+
+    #neonCube2{
+        height:25vh;
+        top:74vh;
+        left:-1%;
+    }
+    #neonCube1{
+        height:25vh;
+        top:1vh;
+    }
+
+    .titleMiddleText{
+        width:60vw;
+        top:50%;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-content:center;
+    }
+    .p1{
+        font-size:8vw;
+        margin-right:1.7vw;
+    }
+    .p2{
+        font-size:9vw;
+        font-weight: bold;
+    }
+
+    #leftMargin, #rightMargin{
+        display:none;
+    }
+
+    #canvasMargin img{
+        display:none;
+    }
+
+    #welcomeCanvas::before{
+        display:none;
+    }
+    #welcomeCanvas::after{
+        display:none;
+    }
+
+    .decorativeCircle{
+        display:none;
+    }
+    .decorativeCircle:after{
+        display:none;
+    }
+    #decorativeCircle1{
+        display:none;
+    }
+    #decorativeCircle2{
+        display:none;
+    }
+    #decorativeCircle1:before{
+        display:none;
+    }
+    #decorativeCircle2:before{
+        display:none;
+    }
+
+    .bgParticle{
+        display:none;
+    }
+}
+

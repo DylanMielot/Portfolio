@@ -1,0 +1,277 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("../fonts/Montserrat-Regular.ttf")
+}
+
+html,
+body
+{
+    font-family: "Montserrat-Regular";
+    scroll-snap-type : y proximity;
+    scroll-behavior: smooth;
+
+    overflow-y: hidden;
+}
+
+/* *************************************** */
+/* SKELETON */
+/* *************************************** */
+
+#mainContainer{
+    position:relative;
+    display:grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows : 100vh 600px 600px 500px 100px;
+    grid-row-gap: 150px;
+    grid-template-areas: 
+        "welcome welcome welcome"
+        "leftMargin cardContainer rightMargin"
+        "leftMargin canvas2 rightMargin"
+        "leftMargin aboutme rightMargin"
+        "footer footer footer";
+
+    background:linear-gradient(60deg, grey, white);
+}
+
+#leftMargin{
+    grid-area: leftMargin;
+    background-color : white;
+    z-index:-1;
+}
+#rightMargin{
+    grid-area: rightMargin;
+    background-color: white;
+    z-index:-1;
+}
+
+#Welcomecontainer {
+    grid-area: welcome;
+    scroll-snap-align: center;
+    background-color: black;
+    position:relative;
+
+    display:grid;
+    grid-template-columns: 3fr 95vh 1fr;
+    grid-template-rows : auto 95vh auto;
+    grid-template-areas: 
+        "welcomeTop welcomeTop welcomeTop"
+        "titleMiddle canvasWelcome canvasMargin"
+        "welcomeBottom welcomeBottom welcomeBottom";
+
+    z-index:1;
+    overflow:hidden;
+}
+
+#cardContainer{
+    position:relative;
+
+    grid-area: cardContainer;
+    background-image: url("../images/cardbg2.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+    overflow-x:scroll;
+    overflow-y: hidden;
+	scroll-snap-type : x mandatory;
+    scroll-behavior: smooth;
+    scroll-snap-align: center;
+}
+#cardContainer:hover{
+    background-size : 150% auto;
+}
+
+.mainContainerContent {
+    box-shadow: 15px 0px 50px black;
+    transition: box-shadow 0.5s ease, background 8s ease;
+}
+.mainContainerContent:hover{
+    box-shadow: 15px 0px 100px black;
+}
+
+
+#aboutmeContainer{
+    grid-area: aboutme;
+    scroll-snap-align: center;
+    position:relative;
+}
+
+#footer{
+    grid-area: footer;
+    background-color: #1e1f21;
+    z-index:1;
+}
+
+#canvas{
+    width:0px;
+    height:0px;
+    background-color: black;
+
+    border-radius: 50%;
+    z-index : 3;
+
+    position:fixed;
+    top:50%;
+    left:50%;
+
+    transition: All 0.5s ease;
+}
+
+
+/* *************************************** */
+/* CARD CARROUSEL PART */
+/* *************************************** */
+.hiddenScroll{
+    scrollbar-color: black white;
+    scrollbar-width:thin;
+}
+
+.hiddenScroll::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.hiddenScroll::-webkit-scrollbar
+{
+	width: 12px;
+    height:5px;
+	background-color: #F5F5F5;
+}
+
+.hiddenScroll::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+	background-color: black;
+}
+
+#carousselCardContainer{
+    width:300%;                /* to change if a new card is added */
+    height:100%;
+    display:flex;
+
+    transition:margin-left 0.5s ease;
+}
+
+.cardCaroussel{
+    width:100%;
+    height:100%;
+	scroll-snap-align: center;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+/* *************************************** */
+/* CANVAS 2 -> TRANSITION   */
+/* *************************************** */
+
+#canvasAnimation {
+    grid-area: canvas2;
+    background-color: black;
+    z-index:1;
+    position:relative;
+
+    scroll-snap-align: center;
+}
+
+#canvasAnimation:fullscreen #newTab{
+    display:none;
+}
+
+
+
+/* *************************************** */
+/* ABOUT ME */
+/* *************************************** */
+
+#canvasAboutMe{
+    margin:0;
+    padding:0;
+    vertical-align:bottom;
+    height: 100%;
+    width:100%;
+}
+
+.aboutmeComponent{
+    position:absolute;
+    top:50px; /* Container : 500, component : 400 */
+    left:50px;
+
+    width : 300px;
+    height : 400px;
+    background-color:white;
+
+    display:grid;
+    grid-template-rows: 180px 220px;
+    grid-template-areas: "logo" "aboutmecontent";
+
+    font-weight: bold;
+    font-size: 18px;
+
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px black;
+
+    transition: All 0.2s ease;
+}
+
+.aboutmebg{
+    grid-area: logo;
+}
+
+.aboutmecontent{
+    grid-area: aboutmecontent;
+
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+}
+
+.aboutmebg.about3{
+    background-image: url('../images/study.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    background-size:50%;
+}
+
+.aboutmebg.about2{
+    background-image: url('../images/3d.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    background-size:50%;
+}
+
+.aboutmebg.about1{
+    background-image: url('../images/technology.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    background-size:50%;
+    cursor:pointer;
+}
+
+.hidden {
+    opacity: 0;
+    transition: All 1s;
+    transform: translateX(-100%);
+    filter:blur(5px);
+}
+
+.show {
+    opacity : 1;
+    transform: translateX(0);
+    filter:blur(0);
+}

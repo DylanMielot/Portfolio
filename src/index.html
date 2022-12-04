@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+
+<body class="hiddenScroll">
+
+    <!-------------------------------->
+    <!------------ LOADER ------------>
+    <!-------------------------------->
+    <div id="loader">
+        <div id="progressBar">
+            <div id="progressBarFill"></div>
+        </div>
+        <p id="loaderSkip" onclick="skipIntro()">Skip</p>
+    </div>
+
+    <!-------------------------------->
+    <!-------- MAIN CONTAINER -------->
+    <!-------------------------------->
+    <div id="mainContainer">
+
+        <!------------------------------------------>
+        <!-------- BACKGROUND LIQUID EFFECT -------->
+        <!------------------------------------------>
+        <div id="backCanvasContainer">
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgParticle"></div>
+            <div class="bgBorder"></div>
+            <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+                <path d="M0,5 C150,50 350,0 500,10 L500,00 L0,0 Z" style="stroke: none; fill:black;"></path>
+            </svg>
+        </div>
+
+        <!-- USED FOR SLIME EFFECT (USED AS FILTER IN CSS)-->
+        <svg style="display:none;">
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic"
+                    stdDeviation="30"/>
+                    <feColorMatrix in="name" mode="matrix"
+                    values="1 0 0 0 0
+                            0 1 0 0 0
+                            0 0 1 0 0
+                            0 0 0 40 -20"/>
+                    <feBlend in="SourceGraphic"/>
+                </filter>
+            </defs>
+        </svg>
+
+
+        <!------------------------------------------------------>
+        <!-------- HOME PAGE (IDK WHY I CHOOSE THIS ID) -------->
+        <!------------------------------------------------------>
+        <div id="Welcomecontainer">
+
+            <!-- CIRCLE TO WRAP THE TEXT -->
+            <div id="decorativeCircle2" class="decorativeCircle"></div>
+
+            <!-- TEXT WRAPPED IN DECORATIVE CIRCLE -->
+            <div class="titleMiddle">
+                <div class="titleMiddleText">
+                    <div style="margin-bottom:3vw;"><p class="p1">Hi, I'm </p><p class="p2">Dylan,</p></div>
+                    <div><p class="p2">Thank you </p></div>
+                    <div><p class="p1">for visiting my portfolio.</p></div>
+                </div>
+            </div>
+            
+            <!-- CANVAS WITH MY HEAD (IDK WHY THIS ID AGAIN) -->
+            <div id="welcomeCanvas">
+                <canvas id="canvas1" style="width:100%;height:auto;"></canvas>
+                <div class="neonCube" id="neonCube1"></div>
+                <div class="neonCube" id="neonCube2"></div>
+            </div>
+            <div id="canvasMargin">
+                <img alt="Vanilla JS" width="300" height="auto">
+            </div>
+        </div>
+        
+
+        <!-------------------------------->
+        <!-------- CARD CONTAINER -------->
+        <!-------------------------------->
+        <div id="cardContainer" class="hiddenScroll mainContainerContent">
+            <!-- CAROUSSEL -->
+            <div id="carousselCardContainer">
+
+                <!-- FIRST CARD -->
+                <div class="cardCaroussel" onclick="document.querySelector('#canvasAnimation').scrollIntoView()">
+                    <div class="card card2" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.5"
+                    data-tilt-max="8">
+                        <div class="imageCard card2"></div>
+                        <div class="contentCard">
+                            <p class="lastupdateCard"> 3 days ago </p>
+                            <h1 class="titleCard">
+                                3D Graph Viewer
+                            </h1>
+                            <div class="presentationCard">
+                                This Three.js project was initially not a project, and was intended to help me understand how to use trigonometry in a 3D environment. Today I share it with you
+                            </div>
+                        </div>
+                        <div class="statsCard">
+                            <p> Allocated time : 2 weeks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECOND CARD -->
+                <div class="cardCaroussel">
+                    <div class="card card1" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.5"
+                    data-tilt-max="8">
+                        <div class="imageCard card1"></div>
+                        <div class="contentCard">
+                            <p class="lastupdateCard"> 2 week ago </p>
+                            <h1 class="titleCard">
+                                Portfolio Project
+                            </h1>
+                            <div class="presentationCard">
+                                Only if you want to know more about me and this portfolio =)
+                            </div>
+                        </div>
+                        <div class="statsCard">
+                            <p> Allocated time : 2 weeks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THIRD CARD -->
+                <div class="cardCaroussel">
+                    <div class="card card3" data-tilt data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.5"
+                    data-tilt-max="8">
+                        <div class="imageCard card3"></div>
+                        <div class="contentCard">
+                            <p class="lastupdateCard"> 2 days ago </p>
+                            <h1 class="titleCard">
+                                Realistic scene
+                            </h1>
+                            <div class="presentationCard">
+                                This Three.js project was initially not a project, and was intended to help me understand how to use trigonometry in a 3D environment. Today I share it with you
+                            </div>
+                        </div>
+                        <div class="statsCard">
+                            <p style="color:red;"> AVAILABLE SOON </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!----------------------------------------------------------->
+        <!-------- THREE.JS CANVAS (IDK WHY THIS NAME AGAIN) -------->
+        <!----------------------------------------------------------->
+        <div id="canvasAnimation" class="mainContainerContent">
+            <canvas id="canvas2"></canvas>
+            <p id="error" style="color:red;"></p>
+            <div id="time"><div id="resetTime"></div><div id="timeInfo"></div></div>
+            <div id="equationBloc">
+                <div>
+                    <label for="equation"> y = </label>
+                    <input id="equation" type="text">
+                </div>
+            </div>
+            <div onclick="document.querySelector('#canvasAnimation').requestFullscreen()" style="position:absolute; top:0; right:0; display:block;">
+                <div id="newTab"></div>
+            </div>  
+        </div>
+
+
+        <!----------------------------------------------->
+        <!-------- CONTAINER FOR ABOUT ME CARDS  -------->
+        <!----------------------------------------------->
+        <div id="aboutmeContainer">
+            <!-- NOT USED FOR THE MOMENT -->
+            <!--<canvas id="canvasAboutMe"></canvas>-->
+
+            <div class="aboutmeComponent hidden">
+                <div class="aboutmebg about1"></div>
+                <div class="aboutmecontent">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo necessitatibus excepturi, voluptas quae cupiditate minima! Blanditiis numquam magni illum voluptate quo? Repellendus sapiente alias dolores nostrum sunt sed vitae architecto.
+                </div>
+            </div>
+
+            <!--<div class="aboutmeComponent">
+                <div class="aboutmebg about2"></div>
+                <div class="aboutmecontent">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut debitis quod reiciendis labore nobis odit corporis accusantium voluptas eos dolorum consectetur officia nihil, culpa nemo deserunt doloremque placeat neque sed.
+                </div>
+            </div>
+
+            <div class="aboutmeComponent">
+                <div class="aboutmebg about3"></div>
+                <div class="aboutmecontent">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facere, dicta quod odio dolor porro nisi numquam quo doloribus tempora est laudantium nesciunt consequatur repellat dolorem? Dicta praesentium et corporis!
+                </div>
+            </div>-->
+        </div>
+
+        <footer id="footer"></footer>
+
+    </div>
+
+    <script>
+        function skipIntro(){
+            document.querySelector("#loader").style.display = 'none'
+            document.querySelectorAll("html, body").forEach((el)=>{
+                el.style.overflowY = "visible"
+            })
+        }
+    </script>
+</body>
+</html>

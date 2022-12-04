@@ -1,0 +1,194 @@
+/* *************************************** */
+/* CARD BODY */
+/* *************************************** */
+
+.card{
+    margin:auto;
+    display: grid;
+    width: 280Px;
+    height:460px;
+
+    grid-template-columns: 100%;
+    grid-template-rows: 43% 45% 12%;
+    grid-template-areas: "image" "content" "stats";
+
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px black;
+    background-color:#1d1d1d;
+
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: width 1s;
+}
+
+/*
+.card1::after{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    z-index:-1;
+    filter:blur(3px);
+
+    background: linear-gradient(45deg,
+    transparent,
+    transparent,
+    magenta,
+    transparent,
+    transparent,
+    magenta,
+    transparent,
+    transparent,
+    magenta
+    );
+    border-radius: 15px;
+
+    background-size : 200% 200%;
+    animation : bgGradient 5s linear infinite;
+}
+.card2::after{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    z-index:-1;
+    filter:blur(3px);
+
+    background: linear-gradient(45deg,
+    transparent,
+    transparent,
+    #1AA7C6,
+    transparent,
+    transparent,
+    #1AA7C6,
+    transparent,
+    transparent,
+    #1AA7C6
+    );
+    border-radius: 15px;
+
+    background-size : 200% 200%;
+    animation : bgGradient 5s linear infinite;
+}
+.card3::after{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    z-index:-1;
+    filter:blur(3px);
+
+    background: linear-gradient(45deg,
+    transparent,
+    transparent,
+    #32a873,
+    transparent,
+    transparent,
+    #32a873,
+    transparent,
+    transparent,
+    #32a873
+    );
+    border-radius: 15px;
+
+    background-size : 200% 200%;
+    animation : bgGradient 5s linear infinite;
+}
+@keyframes bgGradient{
+    0%{background-position: 0% 50%;}
+    100%{background-position: 200% 50%;}
+}*/
+
+.imageCard{
+    grid-area: image;
+    background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url("../images/bg1.jpg");
+    background-size: cover;
+
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+}
+
+.imageCard.card1{
+    background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url("../images/bg1.jpg");
+    background-size: cover;
+}
+.imageCard.card2{
+    background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url("../images/bg2.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.imageCard.card3{
+    background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url("../images/bg3.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.contentCard{
+    grid-area: content;
+    background-color:#1d1d1d;
+    text-align: center;
+
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.titleCard{
+    color:white;
+    transition: all 0.2s ease;
+}
+
+.lastupdateCard {
+    padding-top:15px;
+    color : orange;
+    transition: all 0.2s ease;
+}
+
+.presentationCard{
+    padding:15px;
+    color:rgb(200,200,200);
+    font-weight: bold;
+    font-size:14px;
+
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    
+    height:100px;
+    width:85%;
+    margin:auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transition: all 0.2s ease;
+}
+
+.statsCard{
+    grid-area: stats;
+    background-color:orange;
+
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+
+    display:flex;
+    justify-content: center;
+
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+.statsCard p {
+    margin:auto;
+    font-weight: bold;
+}
+
+.card:hover{
+    cursor:pointer;
+    box-shadow: 15px 15px 50px black;
+}
+
+.card:hover .lastupdateCard, .card:hover h1{
+    transform:translateZ(10px);
+    text-shadow: 5px 5px 5px black;
+}
+.card:hover .presentationCard, .card:hover .statsCard p{
+    transform:translateZ(5px);
+    text-shadow: 5px 5px 5px black;
+}
+
+.js-tilt-glare{
+    border-radius : 15px;
+}

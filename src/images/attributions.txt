@@ -1,0 +1,3 @@
+3D logo : <a href="https://www.flaticon.com/free-icons/3d" title="3d icons">3d icons created by Freepik - Flaticon</a>
+studies : <a href="https://www.flaticon.com/free-icons/study" title="study icons">Study icons created by Prosymbols - Flaticon</a>
+technologies : <a href="https://www.flaticon.com/free-icons/technology" title="technology icons">Technology icons created by Flat Icons - Flaticon</a>

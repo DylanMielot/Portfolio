@@ -1,0 +1,118 @@
+#loader{
+    position:fixed;
+    z-index:10;
+    overflow: hidden;
+    width:100vw;
+    height:100vh;
+    background-color:white;
+    display:flex;
+    flex-direction: column;
+}
+
+#loader::before{
+    content:"Loading...";
+    margin:auto;
+    font-size:5vw;
+}
+
+#loader.endLoading::before{
+    content:"";
+    margin:auto;
+    width : 80vw;
+    font-size:6vw;
+    text-align:center;
+
+    animation: loaderText 15s linear;
+}
+
+#loaderSkip{
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    font-size:1.5vw;
+    text-align:center;
+    cursor:pointer;
+    display:none;
+    font-weight: bold;
+}
+
+@keyframes loaderText{
+    0%{
+        content : "Hello";
+        opacity : 1;
+    }
+    15%{
+        content : "Hello";
+        opacity : 1;
+    }
+    17%{
+        content : "Hello";
+        opacity : 0;
+    }
+    18%{
+        content : "Please note that this portefolio is not optimized for smartphones";
+        opacity:0;
+    }
+    22% {
+        content: "Please note that this portefolio is not optimized for smartphones";
+        opacity: 1;
+    }
+    50%{
+        content: "Please note that this portefolio is not optimized for smartphones";
+        opacity: 1;
+    }
+    52%{
+        content: "Please note that this portefolio is not optimized for smartphones";
+        opacity: 0;
+    }
+    53%{
+        content : "and works better on Google Chrome or Edge";
+        opacity:0;
+    }
+    57% {
+        content: "and works better on Google Chrome or Edge";
+        opacity: 1;
+    }
+    80%{
+        content: "and works better on Google Chrome or Edge";
+        opacity: 1;
+    }
+    82%{
+        content: "and works better on Google Chrome or Edge";
+        opacity: 0;
+    }
+    83%{
+        content: "Thank you";
+        opacity: 0;
+    }
+    85%{
+        content: "Thank you";
+        opacity: 1;
+    }
+    100%{
+        content: "Thank you";
+        opacity: 1;
+    }
+}
+
+#progressBar{
+    position:absolute;
+    bottom:25vh;
+    left:50%;
+    transform:translateX(-50%);
+    width:50vw;
+    height:5px;
+    padding:1px;
+    border:solid 1px black;
+    border-radius: 5px;
+}
+
+#progressBarFill{
+    content:'';
+    position:absolute;
+    height:5px;
+    width:0%;
+    background-color:black;
+    transition: width 1s ease;
+    border-radius: 5px;
+}
