@@ -26,27 +26,39 @@ body
     position:relative;
     display:grid;
     grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows : 100vh 600px 600px 500px 100px;
+    grid-template-rows : 100vh 600px 700px 600px 500px 100px;
     grid-row-gap: 150px;
     grid-template-areas: 
         "welcome welcome welcome"
         "leftMargin cardContainer rightMargin"
-        "leftMargin canvas2 rightMargin"
-        "leftMargin aboutme rightMargin"
+        "blackPart blackPart blackPart"
+        "leftMargin2 canvas2 rightMargin2"
+        "leftMargin2 aboutme rightMargin2"
         "footer footer footer";
 
     background:linear-gradient(60deg, grey, white);
 }
 
-#leftMargin{
-    grid-area: leftMargin;
-    background-color : white;
-    z-index:-1;
+#blackBlock{
+    grid-area: blackPart;
+    position:relative;
+    scroll-snap-align: center;
 }
-#rightMargin{
-    grid-area: rightMargin;
-    background-color: white;
-    z-index:-1;
+#blackBlock::before{
+    content:'';
+    transform: skewY(-6deg);
+    position: absolute;
+    inset:0;
+    background: linear-gradient(45deg, #654ea3, #eaafc8);
+}
+#blackBlock::after{
+    content:'';
+    transform: skewY(-6deg);
+    position: absolute;
+    height:25px;
+    width:100%;
+    bottom:0;
+    background-color: black;
 }
 
 #Welcomecontainer {
@@ -105,7 +117,7 @@ body
 #footer{
     grid-area: footer;
     background-color: #1e1f21;
-    z-index:1;
+    position:relative;
 }
 
 #canvas{

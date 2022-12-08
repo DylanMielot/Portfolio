@@ -6,9 +6,6 @@ import './css/responsivity.css'
 import './css/3dMarker.css'
 import './css/loader.css'
 import './scripts/vanilla-tilt.min.js'
-//import './scripts/connectedParticles.js'
-//import './scripts/connectedParticles2.js'
-//import './scripts/welcomeImageParticles.js'
 import {Marker3DAnimation} from './scripts/3dMarker.js'
 import { animationManager, imageParticleAnimation, CSSAnimation } from './scripts/animationManager.js'
 
@@ -27,6 +24,7 @@ window.onload = (event) => {
     /* ANIMATION MANAGER */
     /***********************************/
     let bgParticles = document.querySelectorAll(".bgParticle")
+    let backCanvasContainer = document.querySelector("#backCanvasContainer")
     let bgAnimation = new CSSAnimation(bgParticles)
 
     let textCover = document.querySelectorAll(".p2")
@@ -42,14 +40,11 @@ window.onload = (event) => {
     let neonCube1 = document.querySelector('#neonCube1')
     let neonCube2 = document.querySelector('#neonCube2')
     let neonCubeAnimation = new CSSAnimation([neonCube1, neonCube2])
-    //neonCubeAnimation.pauseAfterTimeout(16000)
-    
-    marker.dontAnimateWhenIsAnimated([bgAnimation])
-    coverAnimation.dontAnimateWhenIsAnimated([bgAnimation])
-    coverAnimation.animateWhenIsAnimated([textAnimation])
-    coverAnimation.animateWhenIsAnimated([neonCubeAnimation])
+
+    coverAnimation.animateWhenIsAnimated([textAnimation, neonCubeAnimation])
     animationManager.manage(marker, [animationManager.onScreen], markerCanvas)
     animationManager.manage(coverAnimation, [animationManager.onScreen, animationManager.onLoad], coverCanvas)
+    animationManager.manage(bgAnimation, [animationManager.onScreen], backCanvasContainer)
 
     animationManager.startManaging()
 
