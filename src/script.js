@@ -117,10 +117,7 @@ window.onload = (event) => {
     })
 
 
-
     progressBarFill.style.width = "65%";
-
-    
 
 
 

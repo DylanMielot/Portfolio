@@ -6,7 +6,6 @@
 @media screen and (min-width:2000px){
     #mainContainer{
         grid-template-columns: 1fr 3fr 1fr;
-        grid-template-rows : 100vh 600px 600px 500px 100px;
     }
 
     #carousselCardContainer{
@@ -19,13 +18,6 @@
 
     #cardContainer{
         overflow : hidden;
-    }
-
-    @keyframes particleFall{
-        0%{ top : -50%;}
-        35%{ top : 0%;}
-        70%{ top : calc(100% - 250px);}
-        100%{ top : calc(100% - 100px);}
     }
 }
 
@@ -47,6 +39,7 @@
         grid-template-areas: 
             "welcome"
             "cardContainer"
+            "blackPart"
             "canvas2"
             "aboutme"
             "footer";
